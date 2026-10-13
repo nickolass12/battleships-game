@@ -1,0 +1,92 @@
+# Battleships game
+
+
+# Overview
+
+A two-player Battleships game simulation implemented in C, featuring ship placement, turn-based attacks, statistical analysis, and matrix-based encryption and decryption.
+
+The program supports multiple matches, tracks player performance, and processes statistical queries, including encrypted requests and responses.
+
+# Implementation
+
+The system is divided into three main components:
+
+Game Simulation: Manages ship placement, board representation, player attacks, and win detection.
+
+Statistical Analysis: Evaluates player accuracy and determines how different outcomes could improve overall performance.
+
+Encryption & Decryption: Uses matrix operations and modular arithmetic to decrypt statistical requests and encrypt their results.
+
+# Game Mechanics
+
+Each match involves two players with separate game boards.
+
+The game follows these steps:
+Initializes the boards and reads ship configurations.
+Validates ship positions and places valid ships on the boards.
+Displays both game boards.
+Processes alternating attacks, identifying missed shots, successful hits, and destroyed ships.
+Determines the winner when the required victory condition is reached.
+
+The program also tracks successful and total attacks to calculate player accuracy.
+
+# Statistical Analysis
+
+The system implements four types of statistical queries to analyze player performance.
+
+These operations evaluate how changes to match results could affect a player's accuracy, including scenarios involving individual matches and overall performance across multiple matches.
+
+Sorting algorithms are used to identify which match results have the greatest impact on the overall statistics.
+
+# Encryption & Decryption
+
+Statistical requests can be provided in encrypted form.
+
+The encryption and decryption mechanism uses:
+Matrix multiplication and transformations
+Determinant calculation
+Adjugate matrices
+Modular multiplicative inverses
+Modular arithmetic
+
+Encrypted requests are decrypted before processing, and their corresponding results are encrypted before being displayed. When encryption is disabled, statistical queries are processed directly.
+
+# Memory Management
+
+The implementation uses dynamic memory allocation for one-dimensional and two-dimensional arrays, including game boards and intermediate matrices.
+
+Allocated memory is released when it is no longer needed or at the end of execution.
+
+# Input and Output
+
+The program reads input from standard input (stdin) and prints results to standard output (stdout).
+
+The input consists of:
+Number of matches
+Game board dimensions
+Ship configurations for both players
+Player attack coordinates
+Encryption key and statistical queries
+The program outputs game boards, attack results, match winners, and statistical query results.
+
+# Build and Run
+
+Requirements:
+GCC compiler
+Make
+C99 support
+
+Compilation:
+make build
+
+Execution:
+./battleships
+
+Alternatively, the program can read input from a file:
+./battleships < input.txt
+
+To save the output to a file:
+./battleships < input.txt > output.txt
+
+Cleanup:
+make clean
